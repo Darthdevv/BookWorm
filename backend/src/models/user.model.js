@@ -2,15 +2,7 @@ import mongoose from "mongoose";
 
 const userSchema = new mongoose.Schema(
   {
-    firstName: {
-      type: String,
-      required: true,
-    },
-    lastName: {
-      type: String,
-      required: true,
-    },
-    userName: {
+    fullName: {
       type: String,
       unique: true,
       required: true,
@@ -28,21 +20,6 @@ const userSchema = new mongoose.Schema(
     profileImage: {
       type: String,
       default: ""
-    },
-    recoveryEmail: { type: String },
-    DOB: {
-      type: Date,
-      required: true,
-    },
-    mobileNumber: {
-      type: String,
-      unique: true,
-      required: true,
-    },
-    status: {
-      type: String,
-      enum: ["online", "offline"],
-      default: "offline",
     },
   },
   { timestamps: true }
