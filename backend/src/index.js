@@ -3,6 +3,7 @@ import dotenv from "dotenv";
 import cors from "cors";
 import connectToMongoDB from "./db/connection.js";
 import userRoutes from "./routes/user.routes.js";
+import bookRoutes from "./routes/book.routes.js";
 
 import {
   notFound,
@@ -26,6 +27,7 @@ app.use((req, res, next) => {
   next();
 });
 app.use("/api/users", userRoutes);
+app.use("/api/books", bookRoutes);
 app.use(notFound);
 app.use(globalErrorHandler);
 
